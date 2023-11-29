@@ -1,0 +1,158 @@
+
+
+//pc viewport width
+$main-text-color: #05445E;
+$largest-font-size: 70px;
+$smallest-font-size: 30px;
+$bold: 600;
+$italic: italic;
+$medium: 400;
+$highlighted: #189AB4;
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D4F1F4;
+    color: $main-text-color;
+    width: 100%;
+    .App{
+        height: 100%;
+        width: 80%;
+        margin: auto;
+        .socialMedia{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+    
+            .social ul{
+                padding-left: 0px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                list-style: none;
+                column-gap: 5px;
+                img{
+                    width: 30px
+                };
+                #item0:hover{
+                    content: url('../social/assets/gmail\ \(1\).svg')
+                };
+                #item1:hover{
+                    content: url('../social/assets/twitter\ \(1\).svg')
+                };
+                #item2:hover{
+                    content: url('../social/assets/instagram\ \(1\).svg')
+                };
+                #item3:hover{
+                    content: url('../social/assets/linkedin\ \(2\).svg')
+                }
+                
+            }
+        };
+        .nav-animation{
+            padding-left: 0px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            .welcome-text {
+                height: 100%;
+                position: relative;
+                margin-top: 13%;
+                ul{
+                    padding: 0;
+                    font-size: $largest-font-size;
+                    font-weight: $bold;
+                    display: flex;
+                    position: absolute;
+                    flex-direction: column;
+                    list-style: none;
+                    #line1::before{
+                        content: 'Hello there';
+                        cursor: pointer
+                    };
+                    #line2::before{
+                        content: "I'm Anthony";
+                        cursor: pointer
+                    };
+                    #line3::before{
+                        content: 'How do you do?';
+                        cursor: pointer
+                    };
+                    .hoverline1:hover::before{
+                        content: 'About Me';
+                        color: $highlighted
+                    };
+                    .hoverline2:hover::before{
+                        content: "My Work";
+                        color: $highlighted
+                    };
+                    .hoverline3:hover::before{
+                        content: "Let's Chat";
+                        color: $highlighted;
+                    }
+                    .line1::before{
+                        content: 'About Me';
+                        cursor: pointer
+                    };
+                    .line2::before{
+                        content: "My Work";
+                        cursor: pointer
+                    };
+                    .line3::before{
+                        content: "Let's Chat";
+                        cursor: pointer
+                    };
+            
+                }
+                .clicked{
+                    font-size: $smallest-font-size
+                }
+                
+            };
+           
+            .animation-wrapper{
+                display: flex;
+                margin: auto;
+                margin-top: -100px;
+                #polygon2{
+                    width: 526px;
+                    position: absolute
+                };
+                #polygon3{
+                    width: 476px;
+                    position: absolute
+                };
+                #polygon4{
+                    width: 428px;
+                    position: absolute
+                };
+                #polygon5{
+                    width: 378px;
+                    position: absolute
+                };
+                #polygon6{
+                    width: 328px;
+                    position: absolute
+                };
+                #polygon7{
+                    width: 280px;
+                    position: absolute
+                };
+                #polygon8{
+                    width: 230px;
+                    position: absolute
+                };
+                #polygon9{
+                    width: 180px;
+                    position: absolute
+                };
+                #polygon1{
+                    width: 132px;
+                    position: absolute
+                }
+            }
+        }
+    }
+}
+img{
+    width: 20px
+}

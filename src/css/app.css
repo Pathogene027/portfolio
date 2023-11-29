@@ -1,0 +1,145 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #D4F1F4;
+  color: #05445E;
+  width: 100%;
+}
+body .App {
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+body .App .socialMedia {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+body .App .socialMedia .social ul {
+  padding-left: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+body .App .socialMedia .social ul img {
+  width: 30px;
+}
+body .App .socialMedia .social ul #item0:hover {
+  content: url("../social/assets/gmail (1).svg");
+}
+body .App .socialMedia .social ul #item1:hover {
+  content: url("../social/assets/twitter (1).svg");
+}
+body .App .socialMedia .social ul #item2:hover {
+  content: url("../social/assets/instagram (1).svg");
+}
+body .App .socialMedia .social ul #item3:hover {
+  content: url("../social/assets/linkedin (2).svg");
+}
+body .App .nav-animation {
+  padding-left: 0px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+body .App .nav-animation .welcome-text {
+  height: 100%;
+  position: relative;
+  margin-top: 13%;
+}
+body .App .nav-animation .welcome-text ul {
+  padding: 0;
+  font-size: 70px;
+  font-weight: 600;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  list-style: none;
+}
+body .App .nav-animation .welcome-text ul #line1::before {
+  content: "Hello there";
+  cursor: pointer;
+}
+body .App .nav-animation .welcome-text ul #line2::before {
+  content: "I'm Anthony";
+  cursor: pointer;
+}
+body .App .nav-animation .welcome-text ul #line3::before {
+  content: "How do you do?";
+  cursor: pointer;
+}
+body .App .nav-animation .welcome-text ul .hoverline1:hover::before {
+  content: "About Me";
+  color: #189AB4;
+}
+body .App .nav-animation .welcome-text ul .hoverline2:hover::before {
+  content: "My Work";
+  color: #189AB4;
+}
+body .App .nav-animation .welcome-text ul .hoverline3:hover::before {
+  content: "Let's Chat";
+  color: #189AB4;
+}
+body .App .nav-animation .welcome-text ul .line1::before {
+  content: "About Me";
+  cursor: pointer;
+}
+body .App .nav-animation .welcome-text ul .line2::before {
+  content: "My Work";
+  cursor: pointer;
+}
+body .App .nav-animation .welcome-text ul .line3::before {
+  content: "Let's Chat";
+  cursor: pointer;
+}
+body .App .nav-animation .welcome-text .clicked {
+  font-size: 30px;
+}
+body .App .nav-animation .animation-wrapper {
+  display: flex;
+  margin: auto;
+  margin-top: -100px;
+}
+body .App .nav-animation .animation-wrapper #polygon2 {
+  width: 526px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon3 {
+  width: 476px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon4 {
+  width: 428px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon5 {
+  width: 378px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon6 {
+  width: 328px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon7 {
+  width: 280px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon8 {
+  width: 230px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon9 {
+  width: 180px;
+  position: absolute;
+}
+body .App .nav-animation .animation-wrapper #polygon1 {
+  width: 132px;
+  position: absolute;
+}
+
+img {
+  width: 20px;
+}/*# sourceMappingURL=app.css.map */
