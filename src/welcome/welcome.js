@@ -1,31 +1,29 @@
-import React, {useState} from "react";
-const Welcome = () => {
-  const [clicked, setClicked] = useState()
-  const [classNaming, setClassNaming] = useState()
-  const [idNaming, setIdNaming] = useState()
-
- 
-  
+import React from "react";
+import {Link} from 'react-router-dom'
+const Welcome = ({clicked,setClicked}) => {
   const handleSizeChanges=(e)=>{
-    console.log(e.target.parentNode)
+    const clickable = e.currentTarget
     if(e.target.parentNode.className!=='clicked'){
       setClicked('clicked')
-      e.target.parentNode.childNodes.forEach((item,index)=>{
-        setClassNaming(`line${index}`)
-        setIdNaming(`item${index}`)
+      clickable.classList.add('focused')
+      clickable.parentNode.childNodes.forEach((item,index)=>{
+        if(clickable.parentNode.childNodes[index]!==clickable){
+          item.classList.remove('focused')
+        }
       })
     }
-    e.target.parentNode.childNodes.forEach((item,index)=>{
-      console.log(item.className)
-    })
   }
+  
   const list = [1,1,1]
+  console.log(clicked,20)
   return (
     <div className="welcome-text">
-      <ul className={clicked}>
+      <ul className={clicked==='clicked'? clicked : 'unclicked'}>
         {
-          list.map((item,index)=>{
-            return(<li key={index} id={idNaming? idNaming:`line${index+1}` } className={classNaming || `hoverline${index+1}`} onClick={handleSizeChanges}></li>)
+          list.map((_item,index)=>{
+            return(<li key={index} onClick={handleSizeChanges}>
+              <Link to='/About'><p className={ `line${index+1}`}></p></Link>
+              </li>)
           })
         }
        

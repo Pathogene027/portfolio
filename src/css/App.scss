@@ -12,7 +12,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-color: #D4F1F4;
     color: $main-text-color;
-    width: 100%;
+    max-width: 100%;
     .App{
         height: 100%;
         width: 80%;
@@ -22,7 +22,30 @@ body{
             width: 100%;
             display: flex;
             justify-content: flex-end;
-    
+            .home::before{
+                content: 'anmenbus.';
+                height: 40px;
+                display: flex;
+                margin-top: 20px;
+                cursor: pointer
+            };
+            .home:hover::before{
+                animation: home 0.4s forwards
+            }
+            @keyframes home{
+                0%{
+                    content: 'anmenbus.w';
+                }
+                35%{
+                    content: 'anmenbus.wo';
+                }
+                70%{
+                    content: 'anmenbus.wor';
+                }
+                100%{
+                    content: 'anmenbus.work'
+                }
+            }
             .social ul{
                 padding-left: 0px;
                 display: flex;
@@ -30,6 +53,7 @@ body{
                 align-items: center;
                 list-style: none;
                 column-gap: 5px;
+                transition: 0.3ms;
                 img{
                     width: 30px
                 };
@@ -44,8 +68,7 @@ body{
                 };
                 #item3:hover{
                     content: url('../social/assets/linkedin\ \(2\).svg')
-                }
-                
+                };
             }
         };
         .nav-animation{
@@ -57,102 +80,239 @@ body{
                 height: 100%;
                 position: relative;
                 margin-top: 13%;
-                ul{
-                    padding: 0;
-                    font-size: $largest-font-size;
-                    font-weight: $bold;
+                .unclicked, .clicked{
                     display: flex;
                     position: absolute;
                     flex-direction: column;
                     list-style: none;
-                    #line1::before{
-                        content: 'Hello there';
-                        cursor: pointer
-                    };
-                    #line2::before{
-                        content: "I'm Anthony";
-                        cursor: pointer
-                    };
-                    #line3::before{
-                        content: 'How do you do?';
-                        cursor: pointer
-                    };
-                    .hoverline1:hover::before{
-                        content: 'About Me';
-                        color: $highlighted
-                    };
-                    .hoverline2:hover::before{
-                        content: "My Work";
-                        color: $highlighted
-                    };
-                    .hoverline3:hover::before{
-                        content: "Let's Chat";
-                        color: $highlighted;
+                    font-weight: $bold;
+                }
+                .unclicked{
+                    padding: 0;
+                    font-size: $largest-font-size;
+                    font-weight: $bold;
+                    
+                    p{
+                        padding: 0;
+                        margin: 0;
                     }
+                    p:hover{
+                        animation: shift 0.5s forwards;
+                    }
+                     @keyframes shift {
+                    94%{
+                        transform: translateX(10%)
+                    }
+                    95%{
+                        transform: translateX(9%)
+                    }
+                    100%{
+                        transform: translateX(10%)
+                    }
+                }
                     .line1::before{
-                        content: 'About Me';
-                        cursor: pointer
+                        content: 'Hello there';
+                        color: #75E6DA
                     };
                     .line2::before{
-                        content: "My Work";
-                        cursor: pointer
+                        content: "I'm Anthony";
+                    };
+                    .line3::before{
+                        content: 'How do you do?';
+                    };
+                    .line1::before, .line2::before, .line3::before{
+                        cursor: pointer;
+                    }
+                    .line1:hover::before{
+                        content: 'About Me';
+                    };
+                    .line2:hover::before{
+                        content: "My Projects";
+                    };
+                    .line3:hover::before{
+                        content: "Let's Chat";
+                    }
+                };
+                .clicked{
+                    padding: 50px 50px 50px 0px;
+                    border-right: solid 2px $main-text-color;
+                    font-size: $smallest-font-size;
+                    gap: 20px;
+                    width: 200px;
+                    p{
+                        width: 200px;
+                        margin: 0;
+                    }
+                    p:hover{
+                        margin-left: 0
+                    }
+                    li{
+                        width: 0;
+                        border-bottom: solid 2px transparent;
+                    }
+                    li:hover{
+                        transform: 0.3s;
+                        border-bottom-color: $main-text-color;
+                        animation: increase 0.3s normal forwards;
+                    }
+                    
+                    .line1::before{
+                        content: 'About Me';
+                    };
+                    .line2::before{
+                        content: "My Projects ";
                     };
                     .line3::before{
                         content: "Let's Chat";
-                        cursor: pointer
                     };
-            
+                    
+                    .line1:before, .line2::before, .line3::before{
+                        cursor: pointer;
+                        border-bottom: solid 2px transparent;
+                    }
+                    .focused{
+                        opacity: 0.7
+                    }
+                    .focused:hover{
+                        border-bottom-color: transparent;
+                        animation: none;
+                        color: $main-text-color;
+                    }
                 }
-                .clicked{
-                    font-size: $smallest-font-size
+                @keyframes increase{
+                    0%{
+                        width:0px
+                    }
+                    100%{
+                        width: 100%
+                    }
                 }
-                
+               
             };
            
-            .animation-wrapper{
+            .polygon{
                 display: flex;
-                margin: auto;
-                margin-top: -100px;
-                #polygon2{
-                    width: 526px;
-                    position: absolute
+                position: absolute;
+                left: 750px;
+                top: 150px;
+                object{
+                   opacity: 0.1
                 };
-                #polygon3{
-                    width: 476px;
-                    position: absolute
+                >*{
+                    position: absolute;
+                    animation: spin 30s normal infinite;
+                }
+                .polygon2{
+                    width: 416px;
+                    height: 406px;
                 };
-                #polygon4{
-                    width: 428px;
-                    position: absolute
+                .polygon3{
+                    width: 366px;
+                    height: 356px;
                 };
-                #polygon5{
-                    width: 378px;
-                    position: absolute
+                .polygon4{
+                    width: 318px;
+                    height: 308px;
                 };
-                #polygon6{
-                    width: 328px;
-                    position: absolute
+                .polygon5{
+                    width: 268px;
+                    height: 258px;
                 };
-                #polygon7{
-                    width: 280px;
-                    position: absolute
+                .polygon6{
+                    width: 218px;
+                    height: 208px;
                 };
-                #polygon8{
-                    width: 230px;
-                    position: absolute
+                .polygon7{
+                    width: 170px;
+                    height: 160px;
                 };
-                #polygon9{
-                    width: 180px;
-                    position: absolute
+                .polygon8{
+                    width: 120px;
+                    height: 110px;
                 };
-                #polygon1{
-                    width: 132px;
-                    position: absolute
+                .polygon9{
+                    width: 70px;
+                    height: 60px;
+                };
+            }
+            .miniPolygon{
+                position: absolute;
+                left: 140px;
+                top:30px;
+               >*{
+                    position: absolute;
+                    animation: mini-spin 5s normal infinite;
+                    cursor: pointer;
+                };
+                .miniPolygon2{
+                    width: 406px;
+                    height: 396px;
+                };
+                .miniPolygon3{
+                    width: 356px;
+                    height: 346px;
+                };
+                .miniPolygon4{
+                    width: 308px;
+                    height: 298px;
+                };
+                .miniPolygon5{
+                    width: 258px;
+                    height: 248px;
+                };
+                .miniPolygon6{
+                    width: 208px;
+                    height: 198px;
+                };
+                .miniPolygon7{
+                    width: 160px;
+                    height: 150px;
+                };
+                .miniPolygon8{
+                    width: 110px;
+                    height: 100px;
+                };
+                .miniPolygon9{
+                    width: 60px;
+                    height: 50px;
+                };
+                .miniPolygon1{
+                    width: 12px;
+                    height: 2px;
+                };
+                transform: scale(0.1)
+            };
+            @keyframes beep{
+                100%{
+                    width: 800px;
+                    height: 800px
                 }
             }
+            @keyframes mini-spin {
+                0%{
+                    transform: rotate(0deg)
+                }
+                25%{
+                    transform: rotateY(90deg)
+                }
+                50%{
+                    transform: rotate(360deg)
+                }
+                75%{
+                    transform: rotate(180deg)
+                }
+                100%{
+                    transform: rotate(360deg)
+                }
+            }
+            @keyframes spin{
+                0%{
+                    transform: rotate(0deg)
+                }
+                100%{
+                    transform: rotate(360deg)
+                }
+            }    
         }
     }
-}
-img{
-    width: 20px
 }
